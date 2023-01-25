@@ -9,27 +9,14 @@ executors:
           username: $DOCKER_HUB_USER
           password: $DOCKER_HUB_PASSWORD
 jobs:
-  install-pip:
+  install-pip-and-test:
     executor: my-custom-executor
     steps:
       - checkout
       - run: |
           sudo apt-get update
           sudo apt-get install --fix-missing python3-pip
-
-  install-webinteractions:
-    executor: my-custom-executor
-    steps:
-      - checkout
-      - run: |
           python3 -m pip3 install webinteractions
-
-  test-http:
-
-    executor: my-custom-executor
-    steps:
-      - checkout
-      - run: |
           python3 test/test_http.py
 
 workflows:
