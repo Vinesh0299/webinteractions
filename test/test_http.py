@@ -1,7 +1,7 @@
 """Tests http_interaction module"""
 
 import unittest
-from ..src.webinteractions import http_request, get_file_data
+from ..src.webinteractions.http_interaction import http_request, get_file_data
 
 class HttpTestMethods(unittest.TestCase):
     """Contains test cases for testing http_interaction module"""
