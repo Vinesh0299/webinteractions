@@ -9,12 +9,20 @@ executors:
           username: $DOCKER_HUB_USER
           password: $DOCKER_HUB_PASSWORD
 jobs:
+  install-pip:
+    executor: my-custom-executor
+    steps:
+      - checkout
+      - run: |
+          apt-get install python3-pip
+
   install-webinteractions:
     executor: my-custom-executor
     steps:
       - checkout
       - run: |
           python3 -m pip3 install webinteractions
+
   test-http:
 
     executor: my-custom-executor
@@ -26,5 +34,6 @@ jobs:
 workflows:
   my-custom-workflow:
     jobs:
+      - install-pip
       - install-webinteractions
       - test-http
