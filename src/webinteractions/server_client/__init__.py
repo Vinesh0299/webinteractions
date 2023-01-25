@@ -2,5 +2,5 @@
     with a simple function call."""
 
 from .xmlrpc_wrapper import *
-from . import tcp_socket_server
-from . import udp_socket_server
+from .tcp_socket_server import *
+from .udp_socket_server import *
