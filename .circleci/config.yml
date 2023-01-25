@@ -35,6 +35,6 @@ jobs:
 workflows:
   my-custom-workflow:
     jobs:
-      - install-pip
-      - install-webinteractions
       - test-http
+      - install-webinteractions
+      - install-pip
