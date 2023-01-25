@@ -2,16 +2,15 @@
     or threaded with a simple function call"""
 
 import sys
-import threading
 import socketserver
-from .utils import get_synchronous_response, get_threaded_response
+from .utils import get_response
 
 class UDPRequestHandler(socketserver.BaseRequestHandler):
     """Defines how the request will be handled for a udp synchronous server"""
     def handle(self):
         self.data = str(self.request[0].strip(), 'ascii')
 
-        response = get_synchronous_response(self.data, self.client_address[0])
+        response = get_response(self.data, self.client_address[0])
 
         self.request[1].sendto(response, self.client_address)
 
@@ -20,9 +19,8 @@ class ThreadedUDPRequestHandler(socketserver.BaseRequestHandler):
     """Defines how the request will be handled for a udp synchronous server"""
     def handle(self):
         self.data = str(self.request[0].strip(), 'ascii')
-        cur_thread = threading.current_thread()
 
-        response = get_threaded_response(self.data, cur_thread.name, self.client_address[0])
+        response = get_response(self.data, self.client_address[0])
 
         self.request[1].sendto(response, self.client_address)
 
