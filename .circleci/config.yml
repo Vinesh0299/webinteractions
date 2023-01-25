@@ -14,7 +14,7 @@ jobs:
     steps:
       - checkout
       - run: |
-          sudo apt-get install python3-pip
+          sudo apt-get install --fix-missing python3-pip
 
   install-webinteractions:
     executor: my-custom-executor
