@@ -14,7 +14,7 @@ jobs:
     steps:
       - checkout
       - run: |
-          python3 -m pip install webinteractions
+          python3 -m pip3 install webinteractions
   test-http:
 
     executor: my-custom-executor
