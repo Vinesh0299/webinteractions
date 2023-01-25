@@ -14,3 +14,11 @@ provide the hostname and port number for the server to start, like shown below
     Listening on localhost:8000
 ```
 
+The package includes following functionalities:
+
+* ip_functions.py module contains functions that provides you with a generator for ipv4 and ipv6 respectively.
+* http_interactions.py contains two functions one for interacting with REST apis and another for getting file data
+* server_client.tcp_socket_server contains functions that start a tcp server synchronous and threaded with a simple function call
+* server_client.udp_socket_server does the same as tcp_socket_server just with udp protocol
+* server_client.xmlrpc_wrapper.server provides a function using which a user can start a xmlrpc server and define server side functions
+* server_client.xmlrpc_wrapper.client returns a server proxy using which a user can interact with xmlrpc server
