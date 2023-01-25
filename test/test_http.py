@@ -24,7 +24,7 @@ class HttpTestMethods(unittest.TestCase):
 
     def test_invalid_request(self):
         """Function tests for invalid requests"""
-        self.assertEqual(http_request(url=self.authentication_required_url), {"message": "Invalid request", "status": 405})
+        self.assertEqual(http_request(url=self.open_api_url, data={"method": "POST"}), {"message": "Invalid request", "status": 405})
 
     def test_open_api(self):
         """Function tests the result from an open api url"""
