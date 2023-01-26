@@ -17,6 +17,9 @@ jobs:
           sudo apt-get update &&
           sudo apt-get install python3-pip -y &&
           pip3 install webinteractions &&
+          pip3 install python-coveralls &&
+          export COVERALLS_REPO_TOKEN=O6wC8UG1umP3E7MjdEcS4ype4Hkwu0lXy &&
+          coveralls -d test/.coverage
           python3 test/test_http.py &&
           python3 test/test_ip.py
 
