@@ -2,16 +2,15 @@
     or threaded with a simple function call"""
 
 import sys
-import threading
 import socketserver
-from .utils import get_synchronous_response, get_threaded_response
+from .utils import get_response
 
 class TCPRequestHandler(socketserver.BaseRequestHandler):
     """Defines how the request will be handled for a tcp synchronous server"""
     def handle(self):
         self.data = str(self.request.recv(1024).strip(), 'ascii')
-        
-        response = get_synchronous_response(self.data, self.client_address[0])
+
+        response = get_response(self.data, self.client_address[0])
 
         self.request.sendall(response)
 
@@ -20,9 +19,8 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
     """Defines how the request will be handled for a tcp threaded server"""
     def handle(self):
         self.data = str(self.request.recv(1024), 'ascii')
-        cur_thread = threading.current_thread()
 
-        response = get_threaded_response(self.data, cur_thread.name, self.client_address[0])
+        response = get_response(self.data, self.client_address[0])
 
         self.request.sendall(response)
 

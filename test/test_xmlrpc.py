@@ -2,7 +2,7 @@
 
 import xmlrpc
 import unittest
-from webinteractions import get_server_proxy
+from webinteractions.server_client.xmlrpc_wrapper import get_server_proxy
 
 class XmlrpcTestMethods(unittest.TestCase):
     """Class contains test cases for xmlrpc_wrapper"""
