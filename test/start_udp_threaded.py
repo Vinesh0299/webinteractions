@@ -1,0 +1,3 @@
+from webinteractions.server_client import udp_socket_server
+
+udp_socket_server.create_udp_threaded(port=8004)

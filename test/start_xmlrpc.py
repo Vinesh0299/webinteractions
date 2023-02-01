@@ -1,0 +1,3 @@
+from webinteractions.server_client.xmlrpc_wrapper import create_xmlrpc_server
+
+create_xmlrpc_server()
