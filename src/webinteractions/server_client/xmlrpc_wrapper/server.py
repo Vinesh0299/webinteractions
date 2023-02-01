@@ -24,8 +24,7 @@ def create_xmlrpc_server(
             function_map: dictionary of functions mapped with their function name
             hostname: hostname at which the xml-rpc server will listen for requests
             port: port number at which the xml-rpc server will listen for requests
-            allow_none: if set to default value of False, calling functions with no return statement
-            from client will return in Fault
+            allow_none: if set to default value of False, calling functions with no return statement from client will return in Fault
     """
 
     RequestHandler.rpc_paths = paths

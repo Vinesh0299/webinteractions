@@ -1,0 +1,3 @@
+from webinteractions.server_client import tcp_socket_server
+
+tcp_socket_server.create_tcp_threaded(port=8002)

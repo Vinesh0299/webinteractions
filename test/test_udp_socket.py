@@ -8,8 +8,8 @@ class UDPSocketTestMethods(unittest.TestCase):
     def setUp(self):
         """Server must be started separately, rest of the variables are defined here"""
         self.hostname = "localhost"
-        self.port = 8000
-        self.port_threaded = 8001
+        self.port = 8003
+        self.port_threaded = 8004
 
     def test_ping_synchronous(self):
         """Checking the response of ping on the synchronous server"""
