@@ -2,3 +2,5 @@
 dist/
 src/docs
 docs/_build
+test/build
+test/htmlcov
