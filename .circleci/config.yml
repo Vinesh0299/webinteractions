@@ -17,8 +17,12 @@ jobs:
           sudo apt-get update &&
           sudo apt-get install python3-pip -y &&
           pip3 install webinteractions &&
+          sh test/setup_for_tests.sh &&
           python3 test/test_http.py &&
-          python3 test/test_ip.py
+          python3 test/test_ip.py &&
+          python3 test/test_tcp_socket.py &&
+          python3 test/test_udp_socket.py &&
+          python3 test/test_xmlrpc.py
 
 workflows:
   my-custom-workflow:
